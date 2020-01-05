@@ -44,4 +44,5 @@ nbdist/
 ### .rebex.xml ###
 .rebel*
 rebel.xml
+output/
 

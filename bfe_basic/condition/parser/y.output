@@ -1,0 +1,193 @@
+
+state 0
+	$accept: .top $end 
+
+	IDENT  shift 6
+	LPAREN  shift 3
+	NOT  shift 4
+	.  error
+
+	top  goto 1
+	expr  goto 2
+	callExpr  goto 5
+
+state 1
+	$accept:  top.$end 
+
+	$end  accept
+	.  error
+
+
+state 2
+	top:  expr.    (1)
+	expr:  expr.LAND expr 
+	expr:  expr.LOR expr 
+
+	LAND  shift 7
+	LOR  shift 8
+	.  reduce 1 (src line 43)
+
+
+state 3
+	expr:  LPAREN.expr RPAREN 
+
+	IDENT  shift 6
+	LPAREN  shift 3
+	NOT  shift 4
+	.  error
+
+	expr  goto 9
+	callExpr  goto 5
+
+state 4
+	expr:  NOT.expr 
+
+	IDENT  shift 6
+	LPAREN  shift 3
+	NOT  shift 4
+	.  error
+
+	expr  goto 10
+	callExpr  goto 5
+
+state 5
+	expr:  callExpr.    (6)
+
+	.  reduce 6 (src line 66)
+
+
+state 6
+	expr:  IDENT.    (7)
+	callExpr:  IDENT.LPAREN paramlist RPAREN 
+	callExpr:  IDENT.LPAREN RPAREN 
+
+	LPAREN  shift 11
+	.  reduce 7 (src line 70)
+
+
+state 7
+	expr:  expr LAND.expr 
+
+	IDENT  shift 6
+	LPAREN  shift 3
+	NOT  shift 4
+	.  error
+
+	expr  goto 12
+	callExpr  goto 5
+
+state 8
+	expr:  expr LOR.expr 
+
+	IDENT  shift 6
+	LPAREN  shift 3
+	NOT  shift 4
+	.  error
+
+	expr  goto 13
+	callExpr  goto 5
+
+state 9
+	expr:  LPAREN expr.RPAREN 
+	expr:  expr.LAND expr 
+	expr:  expr.LOR expr 
+
+	LAND  shift 7
+	LOR  shift 8
+	RPAREN  shift 14
+	.  error
+
+
+state 10
+	expr:  expr.LAND expr 
+	expr:  expr.LOR expr 
+	expr:  NOT expr.    (5)
+
+	.  reduce 5 (src line 62)
+
+
+state 11
+	callExpr:  IDENT LPAREN.paramlist RPAREN 
+	callExpr:  IDENT LPAREN.RPAREN 
+
+	RPAREN  shift 16
+	BASICLIT  shift 17
+	.  error
+
+	paramlist  goto 15
+
+state 12
+	expr:  expr.LAND expr 
+	expr:  expr LAND expr.    (3)
+	expr:  expr.LOR expr 
+
+	LOR  shift 8
+	.  reduce 3 (src line 54)
+
+
+state 13
+	expr:  expr.LAND expr 
+	expr:  expr.LOR expr 
+	expr:  expr LOR expr.    (4)
+
+	.  reduce 4 (src line 58)
+
+
+state 14
+	expr:  LPAREN expr RPAREN.    (2)
+
+	.  reduce 2 (src line 48)
+
+
+state 15
+	callExpr:  IDENT LPAREN paramlist.RPAREN 
+	paramlist:  paramlist.COMMA BASICLIT 
+
+	RPAREN  shift 18
+	COMMA  shift 19
+	.  error
+
+
+state 16
+	callExpr:  IDENT LPAREN RPAREN.    (9)
+
+	.  reduce 9 (src line 80)
+
+
+state 17
+	paramlist:  BASICLIT.    (10)
+
+	.  reduce 10 (src line 85)
+
+
+state 18
+	callExpr:  IDENT LPAREN paramlist RPAREN.    (8)
+
+	.  reduce 8 (src line 75)
+
+
+state 19
+	paramlist:  paramlist COMMA.BASICLIT 
+
+	BASICLIT  shift 20
+	.  error
+
+
+state 20
+	paramlist:  paramlist COMMA BASICLIT.    (11)
+
+	.  reduce 11 (src line 90)
+
+
+19 terminals, 5 nonterminals
+12 grammar rules, 21/8000 states
+0 shift/reduce, 0 reduce/reduce conflicts reported
+54 working sets used
+memory: parser 11/120000
+7 extra closures
+27 shift entries, 1 exceptions
+8 goto entries
+4 entries saved by goto default
+Optimizer space used: output 23/120000
+23 table entries, 0 zero
+maximum spread: 12, maximum offset: 11

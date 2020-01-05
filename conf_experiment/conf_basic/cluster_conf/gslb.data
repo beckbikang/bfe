@@ -1,0 +1,14 @@
+{
+    "Clusters": {
+        "cluster_example": {
+            "GSLB_BLACKHOLE": 0,
+            "example.bfe.bj": 100
+        },
+        "cluster_adapi": {
+            "GSLB_BLACKHOLE": 0,
+            "bx_adapi.all": 100
+        }
+    },
+    "Hostname": "",
+    "Ts": "0"
+}

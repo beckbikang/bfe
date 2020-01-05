@@ -9,7 +9,15 @@
                     "Weight": 10
                 }
             ]
+        },
+        "cluster_adapi": {
+            "bx_adapi.all": [{
+                "Addr": "10.13.4.162",
+                "Name": "bx_adapi.162",
+                "Port": 80,
+                "Weight": 100
+            }]
         }
     }, 
-    "Version": "init version"
+    "Version": "0.01"
 }

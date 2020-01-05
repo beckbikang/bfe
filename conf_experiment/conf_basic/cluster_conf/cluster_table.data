@@ -1,0 +1,23 @@
+{
+    "Config": {
+        "cluster_example": {
+            "example.bfe.bj": [
+                {
+                    "Addr": "10.199.189.26",
+                    "Name": "example_hostname",
+                    "Port": 10257,
+                    "Weight": 10
+                }
+            ]
+        },
+        "cluster_adapi": {
+            "bx_adapi.all": [{
+                "Addr": "10.13.4.162",
+                "Name": "bx_adapi.162",
+                "Port": 80,
+                "Weight": 100
+            }]
+        }
+    }, 
+    "Version": "0.01"
+}

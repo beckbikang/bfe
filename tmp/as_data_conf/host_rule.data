@@ -1,0 +1,14 @@
+{
+    "Version": "0.01",
+    "DefaultProduct": null,
+    "Hosts": {
+        "adapiTag":[
+            "adapi.dev.weibo.com"
+        ]
+    },
+    "HostTags": {
+        "adapi_product":[
+            "adapiTag"
+        ]
+    }
+}
