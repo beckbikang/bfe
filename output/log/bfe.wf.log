@@ -1,0 +1,9 @@
+[2020/01/05 19:25:43 CST] [EROR] [71538] (main.main:90) main(): in BfeConfigLoad():warnings:
+can't store data at section "SessionTicket", variable "hostRuleConf"
+can't store data at section "SessionTicket", variable "routeRuleConf"
+can't store data at section "SessionTicket", variable "clusterConf"
+can't store data at section "SessionTicket", variable "clusterTableConf"
+can't store data at section "SessionTicket", variable "gslbConf"
+
+[2020/01/05 19:26:46 CST] [EROR] [71557] (github.com/baidu/bfe/bfe_server.StartUp:37) StartUp(): createListeners():listen tcp :8081: bind: address already in use
+[2020/01/05 19:26:46 CST] [EROR] [71557] (main.main:102) main(): bfe_server.StartUp(): listen tcp :8081: bind: address already in use

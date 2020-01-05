@@ -1,20 +1,14 @@
 {
-    "Version": "0.01",
+    "Version": "init version",
     "DefaultProduct": null,
     "Hosts": {
         "exampleTag":[
             "example.org"
-        ],
-        "adapiTag":[
-            "adapi.dev.weibo.com"
         ]
     },
     "HostTags": {
         "example_product":[
             "exampleTag"
-        ],
-        "adapi_product":[
-            "adapiTag"
         ]
     }
 }

@@ -1,5 +1,5 @@
 {
-    "Version": "0.01",
+    "Version": "init version",
     "ProductRule": {
         "example_product": [
             {
@@ -9,12 +9,6 @@
             {
                 "Cond": "default_t()",
                 "ClusterName": "cluster_example"
-            }
-        ],
-        "adapi_product": [
-            {
-                "Cond": "req_host_in(\"adapi.dev.weibo.com\")",
-                "ClusterName": "cluster_adapi"
             }
         ]
     }
